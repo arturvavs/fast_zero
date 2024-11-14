@@ -29,12 +29,13 @@ test = 'pytest -s -x --cov=fast_zero -vv'
 post_test = 'coverage html'
 
 [tool.ruff]
-line-length = 79
 extend-exclude = ['migrations']
+
 
 [tool.ruff.lint]
 preview = true
 select = ['I','F','E','W','PL','PT']
+ignore = ["E501"]
 
 [tool.ruff.format]
 preview = true
