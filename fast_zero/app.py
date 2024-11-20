@@ -1,7 +1,7 @@
 from http import HTTPStatus
-
+from sqlalchemy import create_engine
+from sqlalchemy.orm import Session
 from fastapi import FastAPI, HTTPException
-
 # from sqlalchemy import create_engine
 from fast_zero.schemas import Message, UserDB, UserList, UserPublic, UserSchema
 
@@ -33,7 +33,10 @@ def create_user(user: UserSchema):
 
 @app.get('/users/', response_model=UserList, status_code=HTTPStatus.OK)
 def read_users():
-    return {'users': database}
+    engine = create_engine()
+    with Session(engine) as session:
+        ...
+
 
 
 @app.put(
