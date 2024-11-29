@@ -23,3 +23,8 @@ class UserPublic(BaseModel):  # Crio um novo schema, porém sem a senha.
 
 class UserList(BaseModel):
     users: list[UserPublic]
+
+
+class Token(BaseModel):
+    access_token: str  # O Token JWT que irá ser gerado
+    token_type: str

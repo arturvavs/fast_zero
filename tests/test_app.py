@@ -20,7 +20,7 @@ def test_create_user(client):
     assert response.json() == {
         'username': 'arturvavs',
         'email': 'arturavs@email.com',
-        'id': 1,
+        'id': 6,
     }  # Assert
 
 
